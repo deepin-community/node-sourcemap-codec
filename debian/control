@@ -1,0 +1,32 @@
+Source: node-sourcemap-codec
+Section: javascript
+Priority: optional
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Julien Puydt <jpuydt@debian.org>
+Build-Depends: debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , mocha <!nocheck>
+ , node-console-group <!nocheck>
+ , node-rollup-plugin-node-resolve (>= 9~)
+ , node-rollup-plugin-typescript
+ , node-typescript
+ , node-vlq
+ , rollup
+Standards-Version: 4.5.1
+Vcs-Browser: https://salsa.debian.org/js-team/node-sourcemap-codec
+Vcs-Git: https://salsa.debian.org/js-team/node-sourcemap-codec.git
+Homepage: https://github.com/Rich-Harris/sourcemap-codec
+Testsuite: autopkgtest-pkg-nodejs
+Rules-Requires-Root: no
+
+Package: node-sourcemap-codec
+Architecture: all
+Depends: ${misc:Depends}
+ , node-vlq
+Multi-Arch: foreign
+Description: Encode/decode sourcemap mappings
+ This package makes generating sourcemap mappings easier,
+ since that is a difficult task : the format uses variable-length
+ quantities and uses relative offsets, so it can't be done by chunks.
+ .
+ Node.js is an event-based server-side JavaScript engine.

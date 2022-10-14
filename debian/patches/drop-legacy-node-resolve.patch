@@ -1,0 +1,21 @@
+
+Forwarded: https://github.com/Rich-Harris/sourcemap-codec/pull/84
+
+--- a/rollup.config.js
++++ b/rollup.config.js
+@@ -1,5 +1,5 @@
+ import typescript from 'rollup-plugin-typescript';
+-import resolve from 'rollup-plugin-node-resolve';
++import nodeResolve from '@rollup/plugin-node-resolve';
+ 
+ const pkg = require( './package.json' );
+ 
+@@ -10,7 +10,7 @@
+ 			exclude: 'node_modules/**',
+ 			typescript: require('typescript')
+ 		}),
+-		resolve({ jsnext: true })
++		nodeResolve({ jsnext: true })
+ 	],
+ 	output: [{
+ 		file: pkg.main,
